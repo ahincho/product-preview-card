@@ -1,36 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Preview
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <!-- Displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- Title -->
+    <title>Frontend Mentor | Product preview card component</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+      body {
+        background-color: hsl(30, 38%, 92%);
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .flash-card {
+        display: flex;
+        flex-direction: row;
+        width: 40vw;
+        height: 60vh;
+        border-radius: 15px;
+        background-color: white;
+        overflow: hidden;
+      }
+      .flash-card aside {
+        flex: 50%;
+      }
+      .flash-card aside img {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
+      .flash-card main {
+        flex: 50%;
+        margin: auto 0px;
+      }
+      .flash-card main pre {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: hsl(228, 12%, 48%);
+        padding: 0px 30px;
+        padding-bottom: 10px;
+        margin: 0px;
+      }
+      .flash-card main h1 {
+        font-family: 'Fraunces', sans-serif;
+        font-size: 42px;
+        font-weight: bold;
+        padding: 10px 30px;
+        margin: 0px;
+      }
+      .flash-card main p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: hsl(228, 12%, 48%);
+        padding: 10px 30px;
+        margin: 0px;
+      }
+      .flash-card .price {
+        display: flex;
+        align-items: center;
+        margin: 10px 0px;
+      }
+      .flash-card .price .on-sale {
+        font-family: 'Fraunces', sans-serif;
+        font-size: 42px;
+        color: rgb(61, 129, 104);
+        padding-right: 20px;
+      }
+      .flash-card .price .normal {
+        font-family: 'Montserrat', sans-serif;
+        font: 24px;
+        color: hsl(228, 12%, 48%);
+      }
+      .flash-card button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+        border: none;
+        background-color: rgb(61, 129, 104);
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+      .flash-card button:hover {
+        cursor: pointer;
+      }
+      .flash-card button img {
+        padding-right: 10px;
+      }
+      .flash-card .add-to-cart {
+        width: 70%;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        width: 50%;
+      }
+      @media (max-width: 1600px) {
+        .flash-card main h1 {
+          font-size: 36px;
+        }
+        .flash-card main p {
+          font-size: 16px;
+        }
+        .flash-card .price .on-sale {
+          padding-right: 10px;
+        }
+        .flash-card button img {
+          padding-right: 5px;
+        }
+        .flash-card .add-to-cart {
+          font-size: 14px;
+        }
+      }
+      @media (max-width: 1440px) {
+        .flash-card {
+          flex-direction: column;
+          width: 60vw;
+          height: 80vh;
+        }
+        .flash-card aside {
+          height: 20%;
+        }
+        .flash-card main {
+          height: 80%;
+        }
+        .flash-card main pre {
+          margin-top: 20px;
+          margin-bottom: 0px;
+        }
+        .flash-card main h1 {
+          padding: 0px 30px;
+        }
+        .flash-card .price {
+          margin: 0px;
+        }
+        .flash-card .price .on-sale {
+          font-size: 30px;
+          padding: 0px 30px;
+        }
+        .flash-card main button {
+          margin: 10px auto;
+        }
+      }
+      @media (max-width: 480px) {
+        .flash-card {
+          flex-direction: column;
+          width: 80vw;
+          height: 80vh;
+        }
+        .flash-card main h1 {
+          font-size: 24px;
+        }
+        .flash-card main p {
+          font-size: 12px;
+        }
+        .flash-card .price .on-sale {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="flex-container">
+      <article class="flash-card">
+        <aside>
+          <img src="./images/image-product-desktop.jpg" alt="perfume">
+        </aside>
+        <main>
+          <pre>PERFUME</pre>
+          <h1>Gabrielle Essence Eau De Parfum</h1>
+          <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+          <section class="price">
+            <p class="on-sale">$149.99</p>
+            <del class="normal">$169.99</del>
+          </section>
+          <button class="add-to-cart">
+            <img src="./images/icon-cart.svg">
+            Add to Cart
+          </button>
+        </main>
+      </article>
+    </section>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.linkedin.com/in/angel-hincho-jove/" target="_blank">Angel Hincho Jove</a>.
+    </footer>
+  </body>
 </html>
