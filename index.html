@@ -128,11 +128,11 @@
       }
       @media (max-width: 1440px) {
         .attribution {
-          font-size: 20px;
+          font-size: 18px;
         }
         .flash-card {
           flex-direction: column;
-          width: 60vw;
+          width: 30vw;
           height: 80vh;
         }
         .flash-card aside {
@@ -159,20 +159,37 @@
           margin: 10px auto;
         }
       }
+      @media (max-width: 960px) {
+        .flash-card {
+          flex-direction: column;
+          width: 50vw;
+          height: 80vh;
+        }
+        .flash-card main pre {
+          font-size: 12px;
+        }
+        .flash-card .price .normal {
+          font-size: 12px;
+        }
+      }
       @media (max-width: 480px) {
         .flash-card {
           flex-direction: column;
-          width: 80vw;
+          width: 70vw;
           height: 80vh;
         }
         .flash-card main h1 {
-          font-size: 24px;
+          font-size: 20px;
         }
         .flash-card main p {
           font-size: 12px;
         }
         .flash-card .price .on-sale {
           font-size: 20px;
+          padding-right: 10px;
+        }
+        .flash-card main .add-to-cart {
+          font-size: 12px;
         }
       }
     </style>
